@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP32 Login Page</title>
+</head>
+<body>
+  <form name="loginForm">
+    <table width="20%" bgcolor="#A09F9F" align="center">
+      <tr>
+        <td colspan="2">
+          <center><font size="4"><b>ESP32 Login Page</b></font></center>
+          <br><br>
+        </td>
+      </tr>
+      <tr>
+        <td>Username:</td>
+        <td><input type="text" size="25" name="userid"><br></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" size="25" name="pwd"><br></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="button" onclick="check(this.form)" value="Login">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <script>
+    function check(form) {
+      if (form.userid.value === 'admin' && form.pwd.value === 'admin') {
+        window.open('http://192.168.242.1:8000/dosyaPage.html');
+      } else {
+        alert('Error: Wrong Password or Username');
+      }
+    }
+  </script>
+</body>
+</html>
